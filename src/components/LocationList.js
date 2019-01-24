@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WeatherLocation from './WeatherLocation'
+import './styles.css';
+import WeatherLocation from './WeatherLocation';
 
-const LocationList = ({ cities }) => {
+const LocationList = ({ cities, onSelectLocation }) => {
 
-    const handleWeatherLocationClick = ({ city, onSelectLocation }) => {
+    const handleWeatherLocationClick =  city  => {
         console.log("handleWeatherLocationClick");
         onSelectLocation(city);
     }
 
     const strToComponent = cities => (
-        cities.map
-        ( (city, index) => 
+        cities.map( (city, index) => 
             (
             <WeatherLocation 
                 city={city}
@@ -21,7 +21,7 @@ const LocationList = ({ cities }) => {
         )
     );
     return (
-        <div>
+        <div className="locationList">
             { strToComponent (cities) }
         </div>
     );
