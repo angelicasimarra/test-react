@@ -11,7 +11,7 @@ import {
     THUNDER,
     DRIZZLE
 }
-from "./../../constants/weathers";
+from "./../../../constants/weathers";
 
 const icons = {
     [CLOUD]: "cloud",
